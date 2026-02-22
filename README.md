@@ -110,6 +110,14 @@ Societal Observation Using Public Statistics", arXiv, 2026.
 
 ---
 
+## Updates
+
+| Date | Change |
+|------|--------|
+| 2026-02 | Initial public release: paper, KSI reference implementation, sample data |
+
+---
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.

@@ -1,0 +1,24 @@
+{
+  "d_max": 1,
+  "p_optimal": 14,
+  "p_augmented": 15,
+  "lag_selection": {
+    "aic": 14,
+    "bic": 2,
+    "hqic": 13
+  },
+  "directions": {
+    "STI_to_DS": {
+      "wald_statistic": 44.30051914995637,
+      "df": 14,
+      "p_value": 5.294569866254317e-05,
+      "significant_5pct": true
+    },
+    "DS_to_STI": {
+      "wald_statistic": 16.669872240601737,
+      "df": 14,
+      "p_value": 0.27419755438972704,
+      "significant_5pct": false
+    }
+  }
+}

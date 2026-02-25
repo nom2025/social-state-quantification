@@ -1,0 +1,117 @@
+{
+  "analysis": "SSQ Phase D Regression",
+  "period": "2010-01 ~ 2025-12",
+  "n_obs": 192,
+  "models": {
+    "M1_STI": {
+      "r_squared": 0.2258908657289761,
+      "adj_r_squared": 0.17399528130857234,
+      "aic": 645.4791022640229,
+      "n_obs": 192,
+      "coefficients": {
+        "const": {
+          "estimate": -0.24483041451328874,
+          "std_error": 0.2827441103291783,
+          "t_stat": -0.8659080970006788,
+          "p_value": 0.3865405624400998
+        },
+        "STI_yoy": {
+          "estimate": -1.0443020218449264,
+          "std_error": 0.4520723058140431,
+          "t_stat": -2.310033170389546,
+          "p_value": 0.020886317777526052
+        }
+      }
+    },
+    "M2_STI+Income": {
+      "r_squared": 0.24372014280584153,
+      "adj_r_squared": 0.1884862206512119,
+      "aic": 643.0052382933525,
+      "n_obs": 192,
+      "coefficients": {
+        "const": {
+          "estimate": -0.28195844928380664,
+          "std_error": 0.2719767089117725,
+          "t_stat": -1.0367007175429575,
+          "p_value": 0.29987535750841754
+        },
+        "STI_yoy": {
+          "estimate": -1.123792326994915,
+          "std_error": 0.46631513680680176,
+          "t_stat": -2.409941771760481,
+          "p_value": 0.015955066714371587
+        },
+        "disposable_income_yoy": {
+          "estimate": 8.737953662803506e-06,
+          "std_error": 3.0749376141991364e-06,
+          "t_stat": 2.8416685992113355,
+          "p_value": 0.004487811538308322
+        }
+      }
+    },
+    "M3_Full": {
+      "r_squared": 0.35118258040872863,
+      "adj_r_squared": 0.29588564123901806,
+      "aic": 617.5792918407838,
+      "n_obs": 192,
+      "coefficients": {
+        "const": {
+          "estimate": -0.5861186704250834,
+          "std_error": 0.20394704552369003,
+          "t_stat": -2.8738767405041967,
+          "p_value": 0.00405467170933453
+        },
+        "STI_yoy": {
+          "estimate": -1.1849029337969332,
+          "std_error": 0.33522483988613594,
+          "t_stat": -3.534651352803697,
+          "p_value": 0.0004083135188447348
+        },
+        "disposable_income_yoy": {
+          "estimate": 7.018966361770276e-06,
+          "std_error": 3.0703770086312127e-06,
+          "t_stat": 2.286027527576935,
+          "p_value": 0.022252648183525327
+        },
+        "cpi_yoy": {
+          "estimate": 0.30935928338499347,
+          "std_error": 0.10771135615665478,
+          "t_stat": 2.872113901667556,
+          "p_value": 0.004077359780637322
+        },
+        "unemployment_rate_yoy": {
+          "estimate": -0.17964100783567571,
+          "std_error": 0.27028365884465716,
+          "t_stat": -0.6646388042975346,
+          "p_value": 0.5062815435399037
+        }
+      }
+    }
+  },
+  "standardized_coefficients": {
+    "STI_yoy": -0.5388519373374401,
+    "disposable_income_yoy": 0.11267067688018063,
+    "cpi_yoy": 0.3265124494205589,
+    "unemployment_rate_yoy": -0.03670815466984097
+  },
+  "period_split": {
+    "前半": {
+      "n_obs": 97,
+      "r_squared": 0.06600801323626093,
+      "beta1_STI": -0.14165139363534723,
+      "beta1_p": 0.4969317875347291
+    },
+    "後半": {
+      "n_obs": 95,
+      "r_squared": 0.4848994529625633,
+      "beta1_STI": -1.5083584016800151,
+      "beta1_p": 0.0008466175748973098
+    }
+  },
+  "success_criteria": {
+    "criterion_1_significant": true,
+    "criterion_2_survives_income": true,
+    "criterion_3_sign_stable": true,
+    "all_pass": true
+  }
+}

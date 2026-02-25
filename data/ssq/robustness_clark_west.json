@@ -1,0 +1,17 @@
+{
+  "n_predictions": 128,
+  "rmse_model_a": 1.5981843938947848,
+  "rmse_model_b": 1.3842107344890693,
+  "rmse_improvement_pct": 13.388546416991376,
+  "clark_west": {
+    "t_statistic": 3.737940421753967,
+    "p_value": 9.276694821758191e-05,
+    "significant_10pct": "True",
+    "significant_5pct": "True"
+  },
+  "diebold_mariano": {
+    "t_statistic": 2.8963821613031366,
+    "p_value": 0.0018874619226054712,
+    "significant_10pct": "True"
+  }
+}

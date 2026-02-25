@@ -1,0 +1,51 @@
+{
+  "chow": {
+    "break_date": "2018-01",
+    "f_statistic": 1.0365919586414511,
+    "p_value": 0.4213745184376285,
+    "structural_break_5pct": "False",
+    "n_pre": 96,
+    "n_post": 96
+  },
+  "bai_perron": {
+    "1_break": {
+      "breakpoint_indices": [
+        105
+      ],
+      "breakpoint_dates": [
+        "2018-09"
+      ]
+    },
+    "2_break": {
+      "breakpoint_indices": [
+        105,
+        165
+      ],
+      "breakpoint_dates": [
+        "2018-09",
+        "2023-09"
+      ]
+    },
+    "3_break": {
+      "breakpoint_indices": [
+        25,
+        105,
+        165
+      ],
+      "breakpoint_dates": [
+        "2012-01",
+        "2018-09",
+        "2023-09"
+      ]
+    },
+    "auto_bic": {
+      "breakpoint_indices": [],
+      "breakpoint_dates": [],
+      "penalty": 12.998279564196483
+    },
+    "near_2017_2018": true
+  },
+  "cusum": {
+    "error": "too many values to unpack (expected 2)"
+  }
+}

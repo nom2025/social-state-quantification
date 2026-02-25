@@ -1,0 +1,54 @@
+{
+  "breusch_pagan": {
+    "lm_stat": 40.334865367189586,
+    "lm_pval": 0.0004035900838899861,
+    "f_stat": 3.120443083073457,
+    "f_pval": 0.0001577213358891873,
+    "heteroscedastic_5pct": "True"
+  },
+  "white": {
+    "lm_stat": 130.80997293850368,
+    "lm_pval": 1.0333343699961511e-05,
+    "f_stat": 3.77981853638508,
+    "f_pval": 7.307210597497864e-11,
+    "heteroscedastic_5pct": "True"
+  },
+  "arch_lm": {
+    "lm_stat": 21.88271976522863,
+    "lm_pval": 0.0002114859719576726,
+    "f_stat": 6.026672407857388,
+    "f_pval": 0.00014088075419961603,
+    "arch_effects_5pct": "True"
+  },
+  "ljung_box": {
+    "lag_6": {
+      "statistic": 63.678506783705984,
+      "p_value": 8.02688472811991e-12,
+      "serial_correlation_5pct": "True"
+    },
+    "lag_12": {
+      "statistic": 105.9784708116147,
+      "p_value": 3.7236326676401553e-17,
+      "serial_correlation_5pct": "True"
+    },
+    "lag_18": {
+      "statistic": 114.68296013237794,
+      "p_value": 4.197943539299331e-16,
+      "serial_correlation_5pct": "True"
+    }
+  },
+  "breusch_godfrey": {
+    "lm_stat": 68.68926001264714,
+    "lm_pval": 5.628895059885514e-10,
+    "f_stat": 7.612907199074738,
+    "f_pval": 4.124448963728997e-11,
+    "serial_correlation_5pct": "True"
+  },
+  "jarque_bera": {
+    "statistic": 15.796821471743671,
+    "p_value": 0.0003713332183215101,
+    "skewness": -0.026457122682503536,
+    "kurtosis": 4.4042089469183034,
+    "non_normal_5pct": "True"
+  }
+}

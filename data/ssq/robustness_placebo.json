@@ -1,0 +1,45 @@
+{
+  "shuffle_sti": {
+    "real_beta": -1.1849029337969335,
+    "shuffle_mean": 0.00959272520324712,
+    "shuffle_std": 0.1628053892545958,
+    "percentile": 0.0,
+    "in_lower_5pct": true,
+    "in_lower_1pct": true
+  },
+  "random_indicator": {
+    "real_beta": -1.1849029337969335,
+    "random_mean": 0.0027999400151901264,
+    "random_std": 0.09935446162803974,
+    "percentile": 0.0,
+    "in_lower_5pct": true
+  },
+  "nondiscretionary_target": {
+    "beta_STI": 1.184902933796931,
+    "p_value": 0.0004083135188447434,
+    "significant_5pct": true,
+    "note": "Non-discretionary = 100 - discretionary. β should have opposite sign."
+  },
+  "future_leak": {
+    "k=1": {
+      "beta": -1.0903781084511872,
+      "p_value": 0.00015761754362237068,
+      "significant_5pct": true
+    },
+    "k=3": {
+      "beta": -0.7873333106016033,
+      "p_value": 0.0013562486661778572,
+      "significant_5pct": true
+    },
+    "k=6": {
+      "beta": -0.35560947357706496,
+      "p_value": 0.20418943054907124,
+      "significant_5pct": false
+    },
+    "k=12": {
+      "beta": 0.5840238994363101,
+      "p_value": 0.020467922425453786,
+      "significant_5pct": true
+    }
+  }
+}

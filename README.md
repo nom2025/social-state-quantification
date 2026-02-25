@@ -2,9 +2,9 @@
 
 *A New Framework for Real-Time Societal Observation Using Public Statistics*
 
-> This repository provides the reference implementation and reproducible pipeline accompanying the preprint currently under submission to arXiv.
+> This repository provides the reference implementation and reproducible pipeline accompanying the research papers on Social State Quantification.
 
-Author: **Tomo Nom (Independent Researcher)**
+Author: **Tomohiro Nomura (Independent Researcher)**
 
 ---
 
@@ -30,11 +30,9 @@ There is no single indicator that captures **household-level, multi-dimensional 
 
 This repository contains:
 
-- The full research paper (PDF)
 - Reference implementation of the **Kernel Stress Index (KSI)**
-- Sample datasets and reproducible examples
-
-The goal of this project is to establish a **transparent, reproducible, and extensible foundation** for a new academic discipline that integrates public statistics into unified state quantities.
+- **SSQ empirical pipeline**: Social Threat Index (STI) construction, discretionary share analysis, and robustness tests
+- Sample datasets and reproducible results
 
 ---
 
@@ -50,13 +48,13 @@ A unified state quantity that integrates heterogeneous public statistics into a 
 3. Apply LOCF (Last Observation Carried Forward) to harmonize monthly data
 4. Aggregate standardized indicators via vector summation
 
-### 2. Social Stress Field
+### 2. Social Threat Index (STI)
 
-A spatial-temporal representation of societal tension derived from KSI.
+A composite index measuring year-over-year changes in societal threat perception, constructed from unemployment rate, CPI, and consumer confidence.
 
-### 3. Observation Device
+### 3. Discretionary Share
 
-A reproducible pipeline for transforming raw public statistics into interpretable state quantities.
+The ratio of discretionary consumption to total household expenditure, capturing structural shifts in household spending behavior.
 
 ---
 
@@ -64,18 +62,59 @@ A reproducible pipeline for transforming raw public statistics into interpretabl
 
 ```
 social-state-quantification/
-├── paper/          - Research paper (PDF)
-├── src/            - Python implementation of KSI and related tools
-│   ├── ksi.py      - Kernel Stress Index calculation
-│   ├── utils.py    - Utility functions (z-score, LOCF, polarity)
+├── paper/              - Research paper (PDF)
+├── scripts/            - SSQ empirical analysis pipelines
+│   ├── build_ssq_first_chart.py    - Full SSQ pipeline (STI, DS, regression, Granger, OOS)
+│   └── ssq_robustness_battery.py   - Robustness tests (Toda-Yamamoto, Clark-West, placebo, etc.)
+├── src/                - KSI reference implementation
+│   ├── ksi.py          - Kernel Stress Index calculation
+│   ├── utils.py        - Utility functions (z-score, LOCF, polarity)
 │   └── examples/
-│       └── demo.py - Usage example
-├── data/           - Sample datasets
-├── figures/        - Conceptual diagrams and results
+│       └── demo.py     - Usage example
+├── data/
+│   ├── sample_data.csv - KSI sample data
+│   └── ssq/            - SSQ analysis outputs
+│       ├── sti_monthly.csv                - Social Threat Index time series
+│       ├── discretionary_share_monthly.csv - Discretionary share time series
+│       ├── phase_d_merged.csv             - Merged analysis dataset
+│       ├── phase_d_regression_results.json - OLS/HAC regression results
+│       ├── phase_d_granger_results.json   - Granger causality results
+│       ├── phase_e_prediction_results.json - Out-of-sample prediction results
+│       └── robustness_*.json              - Robustness test results
+├── figures/            - Charts and diagrams
 ├── LICENSE
 ├── README.md
 └── requirements.txt
 ```
+
+---
+
+## SSQ Empirical Paper
+
+The main empirical analysis is in `scripts/build_ssq_first_chart.py`, which implements the full pipeline:
+
+1. **Data Acquisition**: Fetches monthly data from e-Stat API (household survey, CPI, unemployment, consumer confidence)
+2. **Index Construction**: Builds STI (Social Threat Index) and discretionary expenditure share
+3. **Regression Analysis**: OLS with HAC standard errors (Newey-West)
+4. **Granger Causality**: Tests directional causality between STI and discretionary share
+5. **Out-of-Sample Prediction**: Expanding-window forecasts with Diebold-Mariano test
+6. **Visualization**: Generates time series charts (Figure 1)
+
+### Key Results
+
+- STI strongly predicts changes in discretionary share (beta = -1.185, p = 0.0004)
+- Granger causality runs from STI to discretionary share (not reverse)
+- Out-of-sample RMSE improvement: +6.9% over baseline
+
+### Robustness Tests (`scripts/ssq_robustness_battery.py`)
+
+| Test | Result |
+|------|--------|
+| Toda-Yamamoto | STI -> DS: p=0.0001; DS -> STI: p=0.27 |
+| Clark-West | t=3.738, p=0.0001 |
+| Shuffle Placebo | 0.0 percentile (not spurious) |
+| Bai-Perron | Structural break at 2018-09 |
+| Alternative STI | All 4 specifications: p < 0.005 |
 
 ---
 
@@ -85,17 +124,18 @@ social-state-quantification/
 git clone https://github.com/nom2025/social-state-quantification.git
 cd social-state-quantification
 pip install -r requirements.txt
+
+# KSI demo
 python src/ksi.py --input data/sample_data.csv
+
+# SSQ pipeline (requires e-Stat API key in config/estat_config.json)
+python scripts/build_ssq_first_chart.py
 ```
 
----
-
-## Paper
-
-The full paper is available here:
-
-- arXiv: [link will be added after publication]
-- PDF is included in the `paper/` directory.
+> **Note**: The SSQ pipeline requires an e-Stat API key. Register at https://www.e-stat.go.jp/ and place your key in `config/estat_config.json`:
+> ```json
+> {"api_key": "YOUR_API_KEY_HERE"}
+> ```
 
 ---
 
@@ -104,8 +144,9 @@ The full paper is available here:
 If you use this framework in your research, please cite:
 
 ```
-T. Nom, "Social State Quantification: A New Framework for Real-Time
-Societal Observation Using Public Statistics", arXiv, 2026.
+Nomura, T. (2026). "Social Threat Perception and Changes in Household
+Consumption Composition: An Empirical Analysis Using Japanese Monthly Data."
+Under review.
 ```
 
 ---
@@ -114,7 +155,8 @@ Societal Observation Using Public Statistics", arXiv, 2026.
 
 | Date | Change |
 |------|--------|
-| 2026-02 | Initial public release: paper, KSI reference implementation, sample data |
+| 2026-02-25 | Added SSQ empirical pipeline, robustness tests, and analysis data |
+| 2026-02-22 | Initial public release: paper, KSI reference implementation, sample data |
 
 ---
 

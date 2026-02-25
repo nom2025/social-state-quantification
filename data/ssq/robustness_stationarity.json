@@ -1,0 +1,119 @@
+{
+  "STI_yoy": {
+    "ADF_AIC": {
+      "statistic": -2.47124695472543,
+      "p_value": 0.122627892968521,
+      "used_lag": 14,
+      "nobs": 177,
+      "reject_5pct": "False"
+    },
+    "ADF_BIC": {
+      "statistic": -3.0837586217215036,
+      "p_value": 0.02777870504696589,
+      "used_lag": 13,
+      "nobs": 178,
+      "reject_5pct": "True"
+    },
+    "ADF_t-stat": {
+      "statistic": -2.47124695472543,
+      "p_value": 0.122627892968521,
+      "used_lag": 14,
+      "nobs": 177,
+      "reject_5pct": "False"
+    },
+    "KPSS": {
+      "statistic": 0.3655606152529064,
+      "p_value": 0.09199973480478173,
+      "used_lag": 8,
+      "fail_to_reject_5pct": "True"
+    },
+    "Phillips_Perron": {
+      "statistic": -3.087005851505764,
+      "p_value": 0.027529878399830784,
+      "used_lag": 15,
+      "reject_5pct": "True"
+    },
+    "Zivot_Andrews": {
+      "statistic": -3.4231891097674305,
+      "p_value": 0.7272344499293864,
+      "breakpoint_index": null,
+      "reject_5pct": false
+    },
+    "_summary": {
+      "adf_reject_count": 1,
+      "kpss_supports_stationarity": "True",
+      "pp_rejects_unit_root": "True",
+      "judgment": "ambiguous_or_I(1)"
+    }
+  },
+  "DS_yoy": {
+    "ADF_AIC": {
+      "statistic": -3.2472117514483174,
+      "p_value": 0.0174094394057486,
+      "used_lag": 12,
+      "nobs": 179,
+      "reject_5pct": "True"
+    },
+    "ADF_BIC": {
+      "statistic": -6.998316496785747,
+      "p_value": 7.433770953955499e-10,
+      "used_lag": 0,
+      "nobs": 191,
+      "reject_5pct": "True"
+    },
+    "ADF_t-stat": {
+      "statistic": -3.2472117514483174,
+      "p_value": 0.0174094394057486,
+      "used_lag": 12,
+      "nobs": 179,
+      "reject_5pct": "True"
+    },
+    "KPSS": {
+      "statistic": 0.12902113983464658,
+      "p_value": 0.1,
+      "used_lag": 7,
+      "fail_to_reject_5pct": "True"
+    },
+    "Phillips_Perron": {
+      "statistic": -7.658026044941843,
+      "p_value": 1.718141839253485e-11,
+      "used_lag": 15,
+      "reject_5pct": "True"
+    },
+    "Zivot_Andrews": {
+      "statistic": -4.855757594048902,
+      "p_value": 0.04493920957561823,
+      "breakpoint_index": null,
+      "reject_5pct": true
+    },
+    "_summary": {
+      "adf_reject_count": 3,
+      "kpss_supports_stationarity": "True",
+      "pp_rejects_unit_root": "True",
+      "judgment": "I(0)"
+    }
+  },
+  "cointegration": {
+    "engle_granger": {
+      "statistic": -2.7754902202105605,
+      "p_value": 0.17360786662088618,
+      "critical_values": {
+        "1%": -3.933443446270176,
+        "5%": -3.35664143611369,
+        "10%": -3.0586650401002227
+      },
+      "cointegrated_5pct": "False"
+    },
+    "johansen": {
+      "trace_statistics": [
+        31.68776664138435,
+        4.976660599592233
+      ],
+      "trace_critical_5pct": [
+        15.4943,
+        3.8415
+      ],
+      "n_cointegrating_relations": 2
+    }
+  }
+}

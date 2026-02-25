@@ -1,0 +1,31 @@
+{
+  "job_scarcity_only": {
+    "beta_alt_STI": -2.108502896177267,
+    "p_value": 0.00022118955174055082,
+    "r_squared": 0.2730164712697797,
+    "n_obs": 192
+  },
+  "consumer_anxiety_only": {
+    "beta_alt_STI": -0.6011653925976991,
+    "p_value": 0.003996202932016991,
+    "r_squared": 0.3105270285224231,
+    "n_obs": 192
+  },
+  "3_component": {
+    "beta_alt_STI": -1.77735440069937,
+    "p_value": 0.00040831351885546916,
+    "r_squared": 0.35118258040872874,
+    "n_obs": 192
+  },
+  "PCA_weighted": {
+    "beta_alt_STI": -0.8378528995384673,
+    "p_value": 0.00040831351885076004,
+    "r_squared": 0.35118258040872863,
+    "n_obs": 192,
+    "pca_weights": {
+      "job_scarcity": 0.7071067811865477,
+      "consumer_anxiety": 0.7071067811865474
+    },
+    "explained_variance_ratio": 0.6244701871119537
+  }
+}

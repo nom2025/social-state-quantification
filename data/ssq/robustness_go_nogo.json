@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "stationarity": {
+      "pass": true,
+      "detail": "I(0)=False, cointegrated=True"
+    },
+    "structural_break": {
+      "pass": true,
+      "detail": "1-break dates: ['2018-09']"
+    },
+    "clark_west": {
+      "pass": "True",
+      "detail": "p=0.0001"
+    },
+    "shuffle_placebo": {
+      "pass": true,
+      "detail": "percentile=0.0%"
+    }
+  },
+  "n_pass": 4,
+  "n_total": 4,
+  "verdict": "GO"
+}
